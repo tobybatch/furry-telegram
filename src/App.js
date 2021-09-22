@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import {Box, ChakraProvider, Flex, Text, VStack} from "@chakra-ui/react"
+import {UI} from "./components/MainUi";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App({Component}) {
+    return (
+        <ChakraProvider>
+            <Flex color="white">
+            <VStack w="100px" bg="green.500">
+                <Text>Menu 1</Text>
+                <Text>Menu 2</Text>
+                <Text>Menu 3</Text>
+            </VStack>
+            <Box flex="1" bg="tomato">
+                <UI />
+            </Box>
+        </Flex>
+        </ChakraProvider>
+    )
 }
 
 export default App;
